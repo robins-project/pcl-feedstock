@@ -18,17 +18,19 @@ build:
 
 requirements:
   build:
+    # - {{ compiler('c') }}
     # - {{ compiler('cxx') }}
     - cmake
     - ninja
+    - pkg-config
   host:
-    - flann
-    - eigen
+    - flann {{ flann }}
+    - eigen {{ eigen }}
     - boost-cpp
-    - qt
+    - qt {{ qt }}
   run:
     - feature_cuda {{ feature_cuda }} {{ cuda_impl }}
-    - flann
+    - flann {{ flann }}
 
 test:
   commands:
