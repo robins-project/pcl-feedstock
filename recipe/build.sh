@@ -13,6 +13,7 @@ fi
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$PREFIX/lib/pkgconfig
 
+#  -DOpenGL_GL_PREFERENCE=GLVND                  \
 cmake -G "Ninja"                                \
   -DCMAKE_INSTALL_PREFIX=$PREFIX                \
   -DCMAKE_PREFIX_PATH=$PREFIX                   \
@@ -36,7 +37,6 @@ cmake -G "Ninja"                                \
   -DBUILD_tools=ON                              \
   -DBUILD_apps=OFF                              \
   -DCMAKE_LIBRARY_ARCHITECTURE=x86_64-linux-gnu \
-  -DOpenGL_GL_PREFERENCE=GLVND                  \
   ..
 
 ninja install
